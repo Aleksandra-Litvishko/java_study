@@ -5,16 +5,16 @@ class If_Els_Full_Inside {
 		char ch, secret = 'q';
 		
 		System.out.println("Загадана буква в интервале A-Z");
-		System.out.println("Попробуйте угадать её: ");
+		System.out.print("Попробуйте угадать её: ");
 		
 		    ch = (char) System.in.read();
 		if(ch == secret) System.out.println("***Правильно!***");
-		else { System.out.println("...Попробуйте ещё раз");
+		else {
 			if (ch < secret) {
-			System.out.println("Подсказка: загаданная буква располагается ближе к концу алфавита");
+			System.out.println("Извините, загаданная буква располагается ближе к концу алфавита");
 			}
 			else {
-			System.out.println("Подсказка: загаданная буква располагается ближе к началу алфавита");
+			System.out.println("Извините, загаданная буква располагается ближе к началу алфавита");
 		   }
 		}
 	}
