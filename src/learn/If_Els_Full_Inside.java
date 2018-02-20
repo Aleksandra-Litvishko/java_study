@@ -4,8 +4,8 @@ class If_Els_Full_Inside {
 	throws java.io.IOException {
 		char ch, secret = 'q';
 		
-		System.out.println("Загадана буква в интервале A-Z");
-		System.out.print("Попробуйте угадать её: ");
+		System.out.println("Загадана буква в интервале A-Z\r");
+		System.out.print("Попробуйте угадать её:\r ");
 		
 		    ch = (char) System.in.read();
 		if(ch == secret) System.out.println("***Правильно!***");
