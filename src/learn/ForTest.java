@@ -7,7 +7,7 @@ class ForTest {
 		
 		System.out.println("Для остановки нажмите q");
 		
-		for(i = 0;(char) System.in.read() != 'q'; i++) 
+		for(i = 0;((char) System.in.read() == 'q'); i++) 
 			System.out.println("Прогон # " + i);
 	}
 }
