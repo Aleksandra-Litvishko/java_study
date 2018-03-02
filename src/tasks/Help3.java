@@ -1,5 +1,5 @@
 package tasks;
-class Help2 {
+class Help3 {
 	public static void main(String args[])
 	throws java.io.IOException {
 		int choice, ignore;
@@ -18,17 +18,19 @@ class Help2 {
 		do {
 		 ignore = (char) System.in.read();
 		} while(ignore != '\n');
-		
+
 		System.out.println("\n");
 		
-		switch (choice) {
-		case '1': 
+		switch(choice) {
+		case '1': { 
 			System.out.println("—труктура оператора if:"); 
 			System.out.println("if (условие) оператор;"); 
 			System.out.println("else оператор;");
 			System.out.println("\n");
+			ignore = choice;
 			break;
-		case '2':
+		}
+		case '2': {
 			System.out.println("—труктура оператора switch:"); 
 			System.out.println("switch (выражение) { ");
 			System.out.println("case 'x':" );
@@ -40,27 +42,36 @@ class Help2 {
 			System.out.println("оператор;");
 			System.out.println("}");
 			System.out.println("\n");
+			ignore = choice;
 			break;
-		case '3':
+			}
+		case '3': {
 			System.out.println("—труктура оператора for"); 
 			System.out.println("for(инициализаци€; условие; итераци€)");
 			System.out.println("оператор;" );
 			System.out.println("\n");
+			ignore = choice;
 			break;
-		case '4':
+		    }
+		case '4': {
 			System.out.println("—труктура оператора while"); 
 			System.out.println("while(условие) оператор;");
 			System.out.println("\n");
+			ignore = choice;
 			break;
-		case '5':
+		    }
+		case '5': {
 			System.out.println("—труктура оператора do-while"); 
 			System.out.println("do {");
 			System.out.println("оператор;");
 			System.out.println("} while(условие);");
 			System.out.println("\n");
+			ignore = choice;
 			break;
+		    }
 		default: System.out.println("ѕовторите выбор.");
-		      }
-		   } while(choice != '1');
+		   System.out.println("\n");
+		}
+		   } while(ignore != choice);
 		}
 	}
