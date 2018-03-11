@@ -1,14 +1,14 @@
-package learn;
+ï»¿package learn;
 class BoolDemo {
 	public static void main(String args[]) {
 		boolean b;
 		b = false;
-		System.out.println("Çíà÷åíèå b: " + b);
+		System.out.println("Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ b: " + b);
 		b = true;
-		System.out.println("Çíà÷åíèå b: " + b);
-		if(b) System.out.println("Ýòà èíñòðóêöèÿ âûïîëíÿåòñÿ");
+		System.out.println("Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ b: " + b);
+		if(b) System.out.println("Ð­Ñ‚Ð° Ð¸Ð½ÑÑ‚Ñ€ÑƒÐºÑ†Ð¸Ñ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÑÐµÑ‚ÑÑ");
 		b = false;
-		if(b) System.out.println("Ýòà èíñòðóêöèÿ íå âûïîëíÿåòñÿ");
-		System.out.println("Ðåçóëüòàò ñðàâíåíèÿ 10 > 9: " + (10 > 9));
+		if(b) System.out.println("Ð­Ñ‚Ð° Ð¸Ð½ÑÑ‚Ñ€ÑƒÐºÑ†Ð¸Ñ Ð½Ðµ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÑÐµÑ‚ÑÑ");
+		System.out.println("Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ñ 10 > 9: " + (10 > 9));
 	}
 }
