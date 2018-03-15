@@ -24,7 +24,7 @@ class TaskWithAscii {
 				 System.out.println(ch);
 				}
 			
-		} while (ch != '.');
 		 System.out.println("\nЧисло символов, для которых был изменён регистр: " + k);
+		} while (ch != '.');
 	}
 }
