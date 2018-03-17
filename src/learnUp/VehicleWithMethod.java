@@ -1,21 +1,19 @@
 package learnUp; 
 
-class VehicleWithMethod {
+class VehicleWith {
 	int pass;
 	int fuelc;
 	int mog;
 	
 	void rang() {
-		System.out.println("Дальность - " + fuelc * mog + " миль.");
+		System.out.println(" Дальность - " + fuelc * mog + " миль.");
 	}
 }
 
-class AddMeth {
+class VehicleWithMethod {
 	public static void main(String args[]) {
-		VehicleWithMethod miniv = new VehicleWithMethod();
-		VehicleWithMethod sportsc = new VehicleWithMethod();
-		
-		int rang1, rang2;
+		VehicleWith miniv = new VehicleWith();
+		VehicleWith sportsc = new VehicleWith();
 		
 		miniv.pass = 7;
 		miniv.fuelc = 16;

@@ -27,7 +27,7 @@ class VehicleDemo { // в этом классе объявляются объекты типа Vehicle
 		range = minivan.fuelcup * minivan.mpg;
 		range1 = sportscar.fuelcup * sportscar.mpg;
 		
-		System.out.println("Мини-фургон может перевезти " + minivan.passengers + " пассажиров на расстояние " + range + " миль." );
+		System.out.println("Мини-фургон может перевезти! " + minivan.passengers + " пассажиров на расстояние " + range + " миль." );
 		System.out.println("Спортивный автомобиль может перевезти " + sportscar.passengers + " пассажиров на расстояние " + range1 + " миль.");
 	}
 }
