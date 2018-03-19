@@ -3,10 +3,10 @@ package learnUp;
 class VehicleWith {
 	int pass;
 	int fuelc;
-	int mog;
+	int mpg1;
 	
 	void rang() {
-		System.out.println(" Дальность - " + fuelc * mog + " миль.");
+		System.out.println(" Дальность - " + fuelc * mpg1 + " миль.");
 	}
 }
 
@@ -17,11 +17,11 @@ class VehicleWithMethod {
 		
 		miniv.pass = 7;
 		miniv.fuelc = 16;
-		miniv.mog = 21;
+		miniv.mpg1 = 21;
 		
 		sportsc.pass = 2;
 		sportsc.fuelc = 14;
-		sportsc.mog = 12;
+		sportsc.mpg1 = 12;
 		
 		System.out.print("Мини-фургон может перевезти " + miniv.pass + " пассажиров.");
 		miniv.rang();
