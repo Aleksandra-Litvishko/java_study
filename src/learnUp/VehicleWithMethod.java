@@ -1,6 +1,6 @@
 package learnUp; 
 
-class VehicleWith {
+class VehicleWith { // С использованием метода класса
 	int pass;
 	int fuelc;
 	int mpg1;
