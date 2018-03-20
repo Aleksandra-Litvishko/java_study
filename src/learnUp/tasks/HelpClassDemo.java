@@ -89,7 +89,7 @@ class Help5 {
 				 ignore = (char) System.in.read();
 				} while(ignore != '\n');
 				} while ( !helpobj.isvalid(choice) );
-				
+				                                          
 				if(choice == 'q') break;
 
 				System.out.println("\n");
