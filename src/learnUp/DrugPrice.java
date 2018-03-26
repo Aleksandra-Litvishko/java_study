@@ -3,14 +3,12 @@ package learnUp;
 class Drugs {
 	int ShipPrice;
 	int ExtraCharge;
-	float Discount;
+	float Discount = (float) 0.9;
 	String GroupDrugs;
 	
 	Drugs(String gr) {
 		GroupDrugs = gr;
-		Discount = (float) (0.9);
 	}
-	
 	
 	 float FinPrice(int s, int e) {
 		 ShipPrice = s;
