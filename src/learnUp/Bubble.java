@@ -1,4 +1,4 @@
-package learnUp;
+package learnUp; // сортировка пузырьком
 
 class Bubble {
 	public static void main(String args[]) {
