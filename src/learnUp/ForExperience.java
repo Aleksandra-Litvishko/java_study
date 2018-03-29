@@ -7,7 +7,6 @@ class ForExperience {
 		int min, max;
 		int sort;
 		int counter = 0;
-		int counter1 = 0;
 		
 		System.out.print("Исходный массив: ");
 		
@@ -24,14 +23,13 @@ class ForExperience {
 		System.out.println("min и max: " + min + " " + max);
 			
 			for(int b = 1; b < 12; b++) {
-				counter1++;
-				for(int i = 1; i < 12; i++) {
+				for(int i = 11; i >= b; i--) {
 				if(arr[i-1] > arr[i]) {
 					sort = arr[i];
 					arr[i] = arr[i - 1];
 					arr[i - 1] = sort;	
-					counter++;
 				}
+				counter++;
 			 }
 			}
 			System.out.print("Отсортированный массив: ");
@@ -40,6 +38,6 @@ class ForExperience {
 			    System.out.print(arr[i] + " ");
 			System.out.println();
 			
-	System.out.println("Количество проходов: " + (counter + counter1));
+	System.out.println("Количество проходов: " + counter);
 	}
 }
