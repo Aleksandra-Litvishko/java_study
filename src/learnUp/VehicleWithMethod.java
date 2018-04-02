@@ -7,7 +7,6 @@ class VehicleWith { // С использованием метода класса
 	VehicleInner test;
 	
 	void rang() {
-		int x = 1;
 		System.out.println(" Дальность - " + fuelc * mpg1 + " миль.");
 	}
 }
