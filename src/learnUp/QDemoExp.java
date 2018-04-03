@@ -1,42 +1,42 @@
 package learnUp;
 
-class QDem {
-	char arr[];
-	int putl;
-	
-	QDem(int size) {
-		arr = new char[size+1];
-		putl = 0;
-	}
-	
-	void put(char i) {
-		if(putl >= arr.length) {
-		System.out.println("Выход за верхнюю границу массива!");
-		return;
-		}
-		arr[putl] = i;
-		putl++;
-	}
-	
-	 void get(int j) {
-		 System.out.print(arr[j]);
-	}
-}
-
 class QDemoExp {
 	public static void main(String args[]) {
-		QDem obg = new QDem(40);
+		int arr[] = {169, 0, 13, 146666, 47, 68903, -139586};
+		int min, max;
+		int ch = 0;
 		
-		for(int i = 0; i < 40; i++) {
-			obg.put((char) ('A' + i));
+		System.out.println("Исходный массив: ");
+		for(int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] +" ");
 		}
+		System.out.println();
 		
-		System.out.print("Отображение записанных цифр ");
-		for(int i = 0; i < 35; i++) {
-			obg.get(i);
+		min = max = arr[0];
+		
+		for(int i = 1; i < arr.length; i++) {
+			if(arr[i] < arr[i-1]) {
+				min = arr[i];
+			}
+			if(arr[i] > arr[i - 1]) {
+				max = arr[i];
+			}
 		}
+		System.out.println("\nmin и max: " + min + " " + max);
+	
 		
-		System.out.print("\nИиии ");
-		obg.get(37);
+		System.out.println("\nОтсортированный массив: ");
+		for(int i = 1; i < arr.length; i++) {
+			for(int j = arr.length - 1; j >= i; j--) {
+				if(arr[j] < arr[j - 1]) {
+					ch = arr[j];
+					arr[j] = arr[j - 1];
+					arr[j - 1] =  ch;
+				}
+			}
+		} 
+		for(int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] +" ");
+		}
 	}
 }
