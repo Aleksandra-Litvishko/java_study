@@ -6,7 +6,6 @@ class Queue {  // класс, РЕАЛИЗУЮЩИЙ очередь для хранения символов
 	double q2[];
 	
 	int putloc, getloc; // индексы для вставки и извлечения элементов очереди
-	
 	int putloc1, getloc1;
 	int putloc2, getloc2;
 	
