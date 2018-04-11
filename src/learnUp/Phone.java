@@ -10,7 +10,7 @@ class Phone {
 		};
 		int i;
 		
-		if(args.length != 0) {
+		if(args.length == 0) {
 			System.out.println("Использование: Java Phone <имя>");
 		}
 		else {
