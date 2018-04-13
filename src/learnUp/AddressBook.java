@@ -10,7 +10,6 @@ class AddressBook {
                 {"Mark", "Vesci", "109 St.Ursula str, #159"}
         };
         int i = 0;
-        boolean isPersonFound = false;
 
 
         if (args.length == 0) {
