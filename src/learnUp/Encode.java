@@ -2,7 +2,7 @@ package learnUp;
 
 class Encode {
 	public static void main(String args[]) {
-		String message = "Это супер-зашифрованное сообщение";
+		String message = "This is a text";
 		String encmsg = "";
 		String dcdmcg = "";
 		
