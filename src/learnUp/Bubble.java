@@ -13,7 +13,7 @@ class Bubble {
 		}
 		System.out.println();
 
-		for (a = 1; a < 12; a++) {
+		for (a = 1; a < nums.length; a++) {
 			for (b = 11; b >= a; b--) {
 				
 				if(nums[b - 1] > nums[b]) {

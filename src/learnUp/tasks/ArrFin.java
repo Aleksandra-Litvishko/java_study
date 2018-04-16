@@ -2,22 +2,13 @@ package learnUp.tasks;
 
 class ArrFin {
 	public static void main(String args[]) {
-		double arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-		int res = 0;
-		int counter = 0;
+		double arr[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0};
+		int sum = 0;
 
 		for(double x: arr) {
-			res += x;
-			counter++;
-
-			if(counter == arr.length) {
-				res /= arr.length;
-			}
+			sum += x;
 		}
-		System.out.println("\nCреднее арифметическое для массива:");
-		for(double x: arr) {
-			System.out.print(x + " ");
-		}
-		System.out.println("\nравно: " + res);
+		
+		System.out.println("\nCреднее арифметическое для массива: " + (sum / arr.length));
 	}
 }
