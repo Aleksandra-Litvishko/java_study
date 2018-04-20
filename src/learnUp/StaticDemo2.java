@@ -1,6 +1,6 @@
 package learnUp;
 
-class StaticD2 {
+class StaticD2 { // статический метод в действии
 	static int val = 156;
 	
 	static int valDiv2() {

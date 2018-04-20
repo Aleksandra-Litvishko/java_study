@@ -1,6 +1,6 @@
 package learnUp;
 
-class StaticD {
+class StaticD { // статическая переменная в действии
 	int x;
 	static int y;
 	

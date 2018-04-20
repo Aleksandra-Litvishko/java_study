@@ -1,6 +1,6 @@
 package learnUp;
 
-class Factorial {
+class Factorial { // расчёт факториала посредством рекурсивного метода
 	
 	int factR (int n) {
 		int result;
