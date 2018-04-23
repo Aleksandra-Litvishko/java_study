@@ -26,7 +26,7 @@ class QuickSort { // версия класса, реализующего быструю сортировку
 				items[i] = items[j];
 				items[j] = y;
 				i++; j--;
-			}
+			} 
 		} while(i <= j);
 		
 		if(left < j) qs(items, left, j);
