@@ -18,14 +18,15 @@ class QueueNew {
 		putloc++;
 	}
 	
-	void get(int i) {
-		if(putloc == getloc) {
-			System.out.println("\nОчередь пуста");
-		    return;
+	char get() {
+		if (putloc == getloc) {
+			System.out.print("Queue is empty");
+			return (char) 0;
 		}
-		getloc++;
-		System.out.print(arr[i]);
+		
+		return arr[getloc++];
 	}
+	
 }
 
 class NewQueue {
@@ -38,7 +39,7 @@ class NewQueue {
 		
 		System.out.print("Содержимое алфавита: ");
 		for(int i = 0; i < 32; i++) {
-			alph.get(i);
+			System.out.print(alph.get());
 		}
 	}
 }
