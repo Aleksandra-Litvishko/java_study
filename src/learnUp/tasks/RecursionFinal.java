@@ -1,7 +1,9 @@
 package learnUp.tasks;
 
 class RecursionFinal {
+	
 	static String str;
+	
 	static void Reverse(String s) {
 		str = s;
 		int x = str.length() - 1;

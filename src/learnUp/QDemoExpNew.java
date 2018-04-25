@@ -1,8 +1,8 @@
 package learnUp;
 
 class QDe {
-	char arr[];
-	int putloc, getloc;
+	private char arr[];
+	private int putloc, getloc;
 	
 	QDe(int size) {
 		arr = new char[size+1];
@@ -18,13 +18,12 @@ class QDe {
 		putloc++;
 	}
 	
-	void get(int i) {
+	char get() {
 		if(putloc == getloc) {
 			System.out.println("\nОчередь пуста");
-		    return;
+		    return 0;
 		}
-		getloc++;
-		System.out.print(arr[i]);
+		return arr[getloc++];
 	}
 }
 
@@ -38,7 +37,7 @@ class QDemoExpNew {
 		
 		System.out.print("Содержимое алфавита: ");
 		for(int i = 0; i < 32; i++) {
-			alph.get(i);
+			System.out.print(alph.get());
 		}
 	}
 }
