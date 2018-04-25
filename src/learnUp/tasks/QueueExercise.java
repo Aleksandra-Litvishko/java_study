@@ -1,8 +1,7 @@
 package learnUp.tasks;
 
 class QueueNew {
-	private char arrChar[];
-	private char arrNum[];
+	private char arr[];
 	
 	private int putloc, getloc;
 	
@@ -13,16 +12,6 @@ class QueueNew {
 	}
 	
 	void put(char ch) {
-		if(putloc == arr.length) {
-			System.out.println("\nОчередь заполнена");
-			return;
-		}
-		arr[putloc] = ch;
-		putloc++;
-		getloc++;
-	}
-	
-	void put(int ch) {
 		if(putloc == arr.length) {
 			System.out.println("\nОчередь заполнена");
 			return;

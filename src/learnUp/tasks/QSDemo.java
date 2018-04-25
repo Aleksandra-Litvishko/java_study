@@ -2,17 +2,29 @@ package learnUp.tasks;
 
 class QuickSort { // версия класса, реализующего быструю сортировку
 	
-	static void qsort(char items[]) { // организовать вызов фактического метода быстрой сортировки 
+	static void qsort(int items[]) { // организовать вызов фактического метода быстрой сортировки 
 		qs(items, 0, items.length - 1);
 	}
 	
-	private static void qs(char items[], int left, int right) { //рекурсивная версия метода быстрой сортировки символов
+	public static void console(int items[], int ii) {
+
+		for(int i = 0; i < items.length; i++) {
+			System.out.print(items[i]);
+		}
+		System.out.print(" ");
+		System.out.print(ii);
+		
+		System.out.println();
+		
+	}
+	
+	private static void qs(int items[], int left, int right) { //рекурсивная версия метода быстрой сортировки символов
 		int i, j;
-		char x, y;
+		int x, y;
 		
 		i = left; j = right;
 		x = items[(left + right)/2];
-		
+
 		do {
 			while((items[i] < x) && (i < right)) {
 				i++;
@@ -26,6 +38,7 @@ class QuickSort { // версия класса, реализующего быструю сортировку
 				items[i] = items[j];
 				items[j] = y;
 				i++; j--;
+				console(items, x);
 			} 
 		} while(i <= j);
 		
@@ -36,13 +49,14 @@ class QuickSort { // версия класса, реализующего быструю сортировку
 
 class QSDemo {
 	public static void main(String args[]) {
-		char a[] = {'d', 'x', 'a', 'r', 'p', 'j', 'i'};
+		int a[] = {8,6,3,1,4,2,5,7,9};
 		
 		System.out.println("Исходный массив: ");
 		for(int i = 0; i < a.length; i++) {
 			System.out.print(a[i]);
 		}
-		
+
+		System.out.println();
 		System.out.println();
 		
 		QuickSort.qsort(a); //отсортировать массив
