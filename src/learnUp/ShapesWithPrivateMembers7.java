@@ -1,19 +1,35 @@
 package learnUp;
 
-class TwoDShape { // суперкласс, описывающий двумерные объекты
-	double width;
-	double height;
+class TwoDShape1 { // суперкласс, описывающий двумерные объекты
+	private double width;
+	private double height;
+	
+	double getWidth() {
+		return width;
+	}
+	
+	double getHeight() {
+		return height;
+	}
+	
+	void setWidth(double w) {
+		width = w;
+	}
+	
+	void setHeight(double h) {
+		height = h;
+	}
 	
 	void showDim() {
 		System.out.println("Ширина и высота - " + width + " и " + height);
 	}
 }
 
-class Triangle extends TwoDShape { // подкласс, для представления треугольников 
+class Triangle1 extends TwoDShape1 { // подкласс, для представления треугольников 
 	String style;
 	
 	double area() {
-		return width * height / 2; // непосредственное обращение к членам суперкласса TwoDShape
+		return getWidth() * getHeight() / 2; // непосредственное обращение к членам суперкласса TwoDShape
 	}
 	
 	void showStyle() {
@@ -21,14 +37,14 @@ class Triangle extends TwoDShape { // подкласс, для представления треугольников
 	}
 }
 
-class Rectangle extends TwoDShape {
+class Rectangle1 extends TwoDShape1 {
 	
 	double area() {
-		return width * height;
+		return getWidth() * getHeight();
 	}
 	
 	void whoIs() {
-		if (width == height) {
+		if (getWidth() == getHeight()) {
 			System.out.println("Объект является квадратом");
 		}
 		else {
@@ -37,26 +53,26 @@ class Rectangle extends TwoDShape {
 	}
 }
 
-class Shapes7 {
+class ShapesWithPrivateMembers7 {
 	public static void main(String args[]) {
-		Triangle t1 = new Triangle();
-		Triangle t2 = new Triangle();
-		Rectangle r1 = new Rectangle();
-		Rectangle r2 = new Rectangle();
+		Triangle1 t1 = new Triangle1();
+		Triangle1 t2 = new Triangle1();
+		Rectangle1 r1 = new Rectangle1();
+		Rectangle1 r2 = new Rectangle1();
 		
-		t1.width = 4.0; // объектам типа Triangle доступны все члены класса Triangle (в т.ч. унаследованные от  TwoDShape)
-		t1.height = 4.0;
+		t1.setWidth(4.0); // объектам типа Triangle доступны все члены класса Triangle (в т.ч. унаследованные от  TwoDShape)
+		t1.setHeight(4.0);
 		t1.style = "закрашенный";
 		
-		t2.width = 8.0;
-		t2.height = 12.0;
+		t2.setWidth(8.0);
+		t2.setHeight(12.0);
 		t2.style = "контурный";
 		
-		r1.width = 5;
-		r1.height = 6;
+		r1.setWidth(5.0);
+		r1.setHeight(6.0);
 
-		r2.width = 9;
-		r2.height = 9;
+		r2.setWidth(9.0);
+		r2.setHeight(9.0);
 		
 		System.out.println("\nИнформация о t1: ");
 		t1.showDim();

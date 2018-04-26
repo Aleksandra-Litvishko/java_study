@@ -14,7 +14,7 @@ class Bubble {
 		System.out.println();
 
 		for (a = 1; a < nums.length; a++) {
-			for (b = 11; b >= a; b--) {
+			for (b = nums.length - 1; b >= a; b--) {
 				
 				if(nums[b - 1] > nums[b]) {
 					t = nums[b - 1];

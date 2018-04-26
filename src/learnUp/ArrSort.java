@@ -1,4 +1,4 @@
-package learnUp;
+package learnUp; // сортировка выбором
 
 class ArrSort {
     public static void main(String args[]) {
