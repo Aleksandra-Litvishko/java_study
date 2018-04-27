@@ -48,6 +48,7 @@ class Triangle7 extends TwoDShape7 {
 	
 	Triangle7 (String str, double h) {
 		super(h);
+		style = str;
 	}
 	
 	Triangle7 (String str, double w, double h) {
