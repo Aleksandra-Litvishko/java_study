@@ -1,4 +1,4 @@
-package learnUp;
+package Queues;
 
 public interface ICharQ {
 	void put(char ch);

@@ -1,33 +1,6 @@
-package learnUp;
+package Queues;
 
-class FixedQueue implements ICharQ {
-	private char q[];
-	private int putloc, getloc; // индексы вставл€емых и извлекаемых элементов;
-	
-	public FixedQueue(int size) {
-		q = new char[size + 1];
-		putloc = getloc = 0;
-	}
-	
-	public void put(char ch) {
-		if(putloc == q.length - 1) {
-			System.out.println("ќчередь заполнена");
-		}
-		putloc++;
-		q[putloc] = ch;
-	}
-	
-	public char get() {
-		if(putloc == getloc) {
-			System.out.println("ќчередь пуста");
-			return (char) 0;
-		}
-		getloc++;
-		return q[getloc];
-	}
-}
-
-class CircularQueue implements ICharQ {
+class CircularQueue implements ICharQ { //кольцева€ очередь
 	private char q[];
 	private int putloc, getloc; // индексы вставл€емых и извлекаемых элементов;
 	
@@ -36,9 +9,11 @@ class CircularQueue implements ICharQ {
 		putloc = getloc = 0;
 	}
 	public void put(char ch) { // очередь считаетс€ полной, если индекс putloc на единицу меньше индекса getloc или если индекс putloc указывает на конец массива, а getloc на начало
-		if((putloc + 1 == getloc) | ((putloc == q.length - 1) & (getloc == 0))) {
+		if(putloc + 1 == getloc | ((putloc == q.length - 1) & (getloc == 0))) {
 			System.out.println("ќчередь заполнена");
+			return;
 		}
+		
 		putloc++;
 		if(putloc == q.length) { // перейти в начало массива
 			putloc = 0;
@@ -47,12 +22,12 @@ class CircularQueue implements ICharQ {
 	}
 	
 	public char get() {
-		if(putloc == getloc) {
+		if(getloc == putloc) {
 			System.out.println(" - ќчередь пуста");
 			return (char) 0;
 		}
-		getloc++;
 		
+		getloc++;
 		if(getloc == q.length) { // перейти в начало массива
 			getloc = 0;
 		}
