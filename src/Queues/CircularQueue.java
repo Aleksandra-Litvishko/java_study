@@ -1,7 +1,7 @@
 package Queues;
 
 class CircularQueue implements ICharQ { //кольцевая очередь
-	private char q[];
+	private char q[], a[];
 	private int putloc, getloc; // индексы вставляемых и извлекаемых элементов;
 	
 	public CircularQueue(int size) {
@@ -32,5 +32,11 @@ class CircularQueue implements ICharQ { //кольцевая очередь
 			getloc = 0;
 		}
 		return q[getloc];
+	}
+	
+	public void reset() {
+		a = new char[q.length];
+		putloc = getloc = 0;
+		q = a;
 	}
 }

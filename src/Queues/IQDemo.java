@@ -12,6 +12,7 @@ class IQDemo {
 		char ch;
 		
 		iQ = q1;
+		
 		for(int i = 0; i < 10; i++) {
 			iQ.put((char) ('A' + i));
 		}
@@ -67,6 +68,5 @@ class IQDemo {
 			ch = iQ.get();
 			System.out.print(ch);
 		}
-		
 	}
 }

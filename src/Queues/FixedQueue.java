@@ -1,7 +1,7 @@
 package Queues;
 
 class FixedQueue implements ICharQ {
-	private char q[];
+	private char q[], a[];
 	private int putloc, getloc; // индексы вставл€емых и извлекаемых элементов;
 	
 	public FixedQueue(int size) {
@@ -24,5 +24,15 @@ class FixedQueue implements ICharQ {
 		}
 		getloc++;
 		return q[getloc];
+	}
+	
+	public void reset() {
+		a = new char[q.length];
+		putloc = getloc = 0;
+		q = a;
+	}
+	
+	public static void copy(FixedQueue ob, FixedQueue ob1) {
+		
 	}
 }
