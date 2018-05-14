@@ -1,12 +1,9 @@
 package Queues;
 
-class DynQueue implements ICharQ { // динамическая очередь
-	private char q[], a[];
-	private int putloc, getloc;
+class DynQueue extends Queue implements ICharQ { // динамическая очередь
 
 	public DynQueue(int size) {
-		q = new char[size + 1];
-		putloc = getloc = 0;
+		super(size);
 	}
 
 	public void put(char ch) {

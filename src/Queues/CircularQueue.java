@@ -1,12 +1,9 @@
 package Queues;
 
-class CircularQueue implements ICharQ { //кольцевая очередь
-	private char q[], a[];
-	private int putloc, getloc; // индексы вставляемых и извлекаемых элементов;
+class CircularQueue extends Queue implements ICharQ { //кольцевая очередь
 	
 	public CircularQueue(int size) {
-		q = new char[size + 1];
-		putloc = getloc = 0;
+		super(size);
 	}
 	public void put(char ch) { // очередь считается полной, если индекс putloc на единицу меньше индекса getloc или если индекс putloc указывает на конец массива, а getloc на начало
 		if(putloc + 1 == getloc | ((putloc == q.length - 1) & (getloc == 0))) {
