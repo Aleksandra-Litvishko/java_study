@@ -1,18 +1,21 @@
 package Queues;
 
-class DynQueue implements ICharQ { // динамическая очередь
+class DynQueue extends BaseQueue { // динамическая очередь
 	private char q[], a[];
 	private int putloc, getloc;
 
 	public DynQueue(int size) {
+		super(size+1);
 		q = new char[size + 1];
 		putloc = getloc = 0;
 	}
 
+	@Override()
 	public void put(char ch) {
 		if (putloc == q.length - 1) {
 			char t[] = new char[q.length * 2];
 
+			this.size = t.length;
 			for (int i = 0; i < q.length; i++) {
 				t[i] = q[i];
 			}
@@ -23,6 +26,7 @@ class DynQueue implements ICharQ { // динамическая очередь
 		q[putloc] = ch;
 	}
 
+	@Override()
 	public char get() {
 		if (getloc == putloc) {
 			System.out.println(" - Очередь пуста");
