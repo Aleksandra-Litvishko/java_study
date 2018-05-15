@@ -1,6 +1,6 @@
 package bookpackext; // использование модификатора protected
 
-class ExtBook extends bookpack.Book {
+class ExtBook extends bookpack.Book { //наследование суперкласса  
 	private String publisher;
 	
 	public ExtBook(String t, String a, int d, String p) {
