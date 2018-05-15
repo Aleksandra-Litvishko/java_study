@@ -15,7 +15,7 @@ class DynQueue extends BaseQueue { // динамическая очередь
 		if (putloc == q.length - 1) {
 			char t[] = new char[q.length * 2];
 
-			this.size = t.length;
+			setSize(t.length);
 			for (int i = 0; i < q.length; i++) {
 				t[i] = q[i];
 			}
