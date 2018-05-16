@@ -1,6 +1,6 @@
 package Queues;
 
-class CircularQueue extends Queue implements ICharQ { //кольцевая очередь
+public class CircularQueue extends Queue implements ICharQ { //кольцевая очередь
 	
 	public CircularQueue(int size) {
 		super(size);

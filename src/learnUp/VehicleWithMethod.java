@@ -1,22 +1,26 @@
 package learnUp; 
 
-class VehicleWith { // С использованием метода класса
+interface IVehicle {
+	void rang();
+}
+
+class VehicleWith implements IVehicle { // С использованием метода класса
 	int pass;
 	int fuelc;
 	int mpg1;
 	VehicleInner test;
 	
-	void rang() {
+	public void rang() {
 		System.out.println(" Дальность - " + fuelc * mpg1 + " миль.");
 	}
 }
 
-class VehicleInner { // С использованием метода класса
+class VehicleInner implements IVehicle { // С использованием метода класса
 	int pass;
 	int fuelc;
 	int mpg1;
 	
-	void rang() {
+	public void rang() {
 		System.out.println(" Дальность - " + fuelc * mpg1 + " миль.");
 	}
 }

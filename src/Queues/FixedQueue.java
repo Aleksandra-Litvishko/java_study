@@ -1,6 +1,6 @@
 package Queues;
 
-class FixedQueue extends Queue implements ICharQ {
+public class FixedQueue extends Queue implements ICharQ {
 
 	public FixedQueue(int size) {
 		super(size);

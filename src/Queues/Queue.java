@@ -1,10 +1,10 @@
 package Queues;
 
-class Queue {
+public class Queue {
 	protected char q[], a[];
 	protected int putloc, getloc;
 	
-	protected Queue(int size) {
+	public Queue(int size) {
 		q = new char[size + 1];
 		putloc = getloc = 0;
 	}

@@ -1,6 +1,6 @@
 package Queues;
 
-class DynQueue extends Queue implements ICharQ { // динамическая очередь
+public class DynQueue extends Queue implements ICharQ { // динамическая очередь
 
 	public DynQueue(int size) {
 		super(size);

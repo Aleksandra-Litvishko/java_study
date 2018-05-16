@@ -1,25 +1,41 @@
 package learnUp;
 
-abstract class A2 {
+class A2 {
 
-	static int a = 3;
+	int a = 3;
 
-	public static int get() {
+	public int get() {
 		return a;
 	}
 }
 
 class B2 extends A2 {
-	static int b = 4;
+	int b = 4;
+	int arr [] = {1, 2, 3, 4};
 
-	public static int get() {
+	public int get() {
 		return b;
 	}
+	
+	public void ret() {
+		for(int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]);
+		}
+		System.out.println();
+}
 }
 
 class newtask {
 	public static void main(String args[]) {
-		System.out.println(B2.get());
-		System.out.println(A2.get());
+		B2 ob_b = new B2();
+		A2 ob_a = new A2();
+		
+		ob_b.ret();
+		
+		System.out.println(ob_b.get());
+		System.out.println(ob_b.get());
+		
+		System.out.println(ob_a.get());
+		System.out.println(ob_a.get());
 	}
 }

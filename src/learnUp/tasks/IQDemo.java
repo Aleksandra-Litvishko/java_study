@@ -1,4 +1,6 @@
-package Queues;
+package learnUp.tasks;
+
+import Queues.*;
 
 class IQDemo {
 	public static void main(String args[]) {
@@ -10,7 +12,6 @@ class IQDemo {
 		ICharQ iQ;
 		
 		char ch;
-		
 		iQ = q1;
 		
 		for(int i = 0; i < 10; i++) {
@@ -32,7 +33,6 @@ class IQDemo {
 			ch = iQ.get();
 			System.out.print(ch);
 		}
-		
 		System.out.println();
 		
 		Queue.copyTo(q1, q4);
@@ -48,7 +48,7 @@ class IQDemo {
 		
 		iQ = q4;
 		
-		System.out.println("Cодержимое динамической очереди q4: ");
+		System.out.println("Cодержимое круговой очереди q4: ");
 		for(int i = 0; i < 10; i++) {
 			ch = iQ.get();
 			System.out.print(ch);
