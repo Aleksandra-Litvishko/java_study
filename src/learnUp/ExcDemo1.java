@@ -1,6 +1,6 @@
 package learnUp;
 
-class ExcDemo1 {
+class ExcDemo1 { // обработка исключений
 	public static void main(String args[]) {
 		int[] nums = new int[4];
 
