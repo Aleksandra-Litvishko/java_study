@@ -14,25 +14,41 @@ class IQDemo {
 		char ch;
 		iQ = q1;
 		
+		try {
 		for(int i = 0; i < 10; i++) {
 			iQ.put((char) ('A' + i));
 		}
+		}
+		catch(QueueFullException exc) {
+			System.out.println(exc);
+		}
 		
 		System.out.println("Cодержимое фиксированной очереди q1: ");
+		try {
 		for(int i = 0; i < 10; i++) {
 			ch = iQ.get();
 			System.out.print(ch);
 		}
+		}
+		catch(QueueEmptyException exc) {
+			System.out.println(exc);
+		}
+
 		
 		System.out.println();
 		
 		iQ = q4;
 		
 		System.out.println("Cодержимое круговой очереди q4: ");
-		for(int i = 0; i < 10; i++) {
+		try {
+			for(int i = 0; i < 10; i++) {
 			ch = iQ.get();
 			System.out.print(ch);
 		}
+	}
+	catch(QueueEmptyException exc) {
+		System.out.println(exc);
+	}
 		System.out.println();
 		
 		Queue.copyTo(q1, q4);
@@ -40,64 +56,110 @@ class IQDemo {
 		iQ = q1;
 		
 		System.out.println("Cодержимое фиксированной очереди q1: ");
-		for(int i = 0; i < 10; i++) {
+		try {
+			for(int i = 0; i < 10; i++) {
 			ch = iQ.get();
 			System.out.print(ch);
+		}
+		}
+		catch(QueueEmptyException exc) {
+			System.out.println(exc);
 		}
 		System.out.println();
 		
 		iQ = q4;
 		
 		System.out.println("Cодержимое круговой очереди q4: ");
-		for(int i = 0; i < 10; i++) {
+		try {
+			for(int i = 0; i < 10; i++) {
 			ch = iQ.get();
 			System.out.print(ch);
+		}
+	}
+		catch(QueueEmptyException exc) {
+			System.out.println(exc);
 		}
 		
 		System.out.println();
 		
 		iQ = q2;
-		for(int i = 0; i < 10; i++) {
+		
+		try {
+			for(int i = 0; i < 10; i++) {
 			iQ.put((char) ('Z' - i));
+		}
+	}
+		catch(QueueFullException exc) {
+			System.out.println(exc);
 		}
 		
 		System.out.println("Cодержимое динамической очереди: ");
-		for(int i = 0; i < 10; i++) {
+		try {
+			for(int i = 0; i < 10; i++) {
 			ch = iQ.get();
 			System.out.print(ch);
 		}
+	}
+	catch(QueueEmptyException exc) {
+		System.out.println(exc);
+	}
 		
 		System.out.println();
 		
 		iQ = q3;
-		for(int i = 0; i < 10; i++) {
+		try {
+			for(int i = 0; i < 10; i++) {
 			iQ.put((char) ('A' + i));
 		}
+	}
+	catch(QueueFullException exc) {
+		System.out.println(exc);
+	}
 		
 		System.out.println("Cодержимое кольцевой очереди: ");
-		for(int i = 0; i < 10; i++) {
+		try {
+			for(int i = 0; i < 10; i++) {
 			ch = iQ.get();
 			System.out.print(ch);
+		}
+	}
+		catch(QueueEmptyException exc) {
+			System.out.println(exc);
 		}
 		
 		System.out.println();
 		
 		// поместить больше символов в кольцевую очередь
+		try {
 		for(int i = 10; i < 20; i++)  {
 			iQ.put((char) ('A' + i));
 		}
+	}
+		catch(QueueFullException exc) {
+			System.out.println(exc);
+		}
 		
 		System.out.println("Cодержимое кольцевой очереди: ");
+		try {
 		for(int i = 0; i < 10; i++) {
 			ch = iQ.get();
 			System.out.print(ch);
 		}
+		}
+		catch(QueueEmptyException exc) {
+			System.out.println(exc);
+		}
 		
 		System.out.println("\nСохранение и использование данных" + " кольцевой очереди: ");
+		try {
 		for(int i = 0; i < 20; i++)  {
 			iQ.put((char) ('A' + i));
 			ch = iQ.get();
 			System.out.print(ch);
+		}
+	}
+		catch(QueueFullException | QueueEmptyException exc) {
+			System.out.println(exc);
 		}
 	}
 }

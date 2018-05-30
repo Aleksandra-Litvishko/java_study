@@ -5,10 +5,9 @@ public class CircularQueue extends Queue implements ICharQ { //кольцевая очередь
 	public CircularQueue(int size) {
 		super(size);
 	}
-	public void put(char ch) { // очередь считается полной, если индекс putloc на единицу меньше индекса getloc или если индекс putloc указывает на конец массива, а getloc на начало
+	public void put(char ch) throws QueueFullException { // очередь считается полной, если индекс putloc на единицу меньше индекса getloc или если индекс putloc указывает на конец массива, а getloc на начало
 		if(putloc + 1 == getloc | ((putloc == q.length - 1) & (getloc == 0))) {
-			System.out.println("Очередь заполнена");
-			return;
+			throw new QueueFullException(q.length);
 		}
 		
 		putloc++;
@@ -18,10 +17,9 @@ public class CircularQueue extends Queue implements ICharQ { //кольцевая очередь
 		q[putloc] = ch;
 	}
 	
-	public char get() {
+	public char get() throws QueueEmptyException {
 		if(getloc == putloc) {
-			System.out.println(" - Очередь пуста");
-			return (char) 0;
+			throw new QueueEmptyException();
 		}
 		
 		getloc++;

@@ -6,18 +6,17 @@ public class FixedQueue extends Queue implements ICharQ {
 		super(size);
 	}
 
-	public void put(char ch) {
+	public void put(char ch) throws QueueFullException {
 		if (putloc == q.length - 1) {
-			System.out.println("Очередь заполнена");
+			throw new QueueFullException(q.length);
 		}
 		putloc++;
 		q[putloc] = ch;
 	}
 
-	public char get() {
+	public char get() throws QueueEmptyException {
 		if (putloc == getloc) {
-			System.out.println("\nОчередь пуста");
-			return (char) 0;
+			throw new QueueEmptyException();
 		}
 		getloc++;
 		return q[getloc];

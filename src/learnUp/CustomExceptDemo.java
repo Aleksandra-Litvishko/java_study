@@ -3,18 +3,18 @@ package learnUp;
 class NonIntResultException extends Throwable { // использование специально создаваемого исключения
 	int n, d;
 
-	 NonIntResultException(Exception ex) {
-		 super(ex);
-	 }
+	NonIntResultException(Exception ex) {
+		super(ex);
+	}
 
 	NonIntResultException(int i, int j) {
 		n = i;
 		d = j;
 	}
 
-	// public String toString() {
-	// return "результат операции " + n + " / " + d + " не является целым числом!";
-	// }
+	 public String toString() {
+	 return "результат операции " + n + " / " + d + " не является целым числом!";
+	 }
 }
 
 class CustomExceptDemo {
@@ -27,30 +27,22 @@ class CustomExceptDemo {
 
 			try {
 				if (numer[i] % 2 != 0) {
-					throw new NonIntResultException(numer[i], denom[i]);
+					NonIntResultException e = new NonIntResultException(numer[i], denom[i]);
+					e.initCause(new ArithmeticException("cause"));
+					throw e;
 				}
 				System.out.println("numer[i]" + " / " + "denom[i]" + " = " + numer[i] / denom[i]);
 			} 
 			catch (ArithmeticException exc) {
-				// NonIntResultException e = new NonIntResultException(exc);
-				try {
-				throw new NonIntResultException(exc);
-				} 
-				catch(NonIntResultException exc1) {
-					System.out.println("Hey"); 
-					}
-				// new ArrayIndexOutOfBoundsException(exc);
-				
-				//System.out.println("1: " + e.getCause());
-			}
+				System.out.println("Деление на ноль!");
+			} 
 			catch (ArrayIndexOutOfBoundsException exc) {
 				System.out.println("Соответствущий элемент не найден!");
 				exc.getCause();
-			}
+			} 
 			catch (NonIntResultException exc) {
-				//System.out.println("Hey");
-				System.out.println("2: " + exc);
-				// System.out.println(exc.getCause());
+				System.out.println(exc);
+				System.out.println(exc.getCause() + " of NonIntResultException");
 			}
 
 		}

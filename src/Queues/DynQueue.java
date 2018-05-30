@@ -20,10 +20,9 @@ public class DynQueue extends Queue implements ICharQ { // динамическая очередь
 		q[putloc] = ch;
 	}
 
-	public char get() {
+	public char get() throws QueueEmptyException {
 		if (getloc == putloc) {
-			System.out.println(" - Очередь пуста");
-			return (char) 0;
+			throw new QueueEmptyException();
 		}
 
 		getloc++;
