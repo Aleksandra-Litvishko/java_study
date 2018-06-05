@@ -1,6 +1,6 @@
 package javaautocourse;
 
-import java.io.file;
+import java.io.File;
 
 public class FileDemo {
 	public static void main(String args[]){
