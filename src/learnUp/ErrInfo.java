@@ -8,6 +8,10 @@ class Err {
 		msg = s;
 		severity = i;
 	}
+	
+	public String toString() {
+		return "Моя ошибка";
+	}
 }
 
 class ErrorInfo { 
