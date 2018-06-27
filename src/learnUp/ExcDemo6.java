@@ -4,6 +4,7 @@ class ExcDemo6 { // использование вложенных блоков try
 	public static void main(String args[]) {
 		int numer[] = { 2, 4, 12, 24, 3, 7, 13, 144, 97 }; // превышает длину массива denom[]
 		int denom[] = { 1, 2, 0, 6, 0, 7 };
+		
 
 		try { // внешний блок try
 			for (int i = 0; i < numer.length; i++) {
