@@ -4,6 +4,7 @@ import java.io.*;
 
 public class Ktod { // простая утилита для ввода данных с клавиатуры и записи их на диск
 	public static void main(String args[]) {
+
 		String str;
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
