@@ -2,7 +2,6 @@ package learnUp;
 
 class TickTock { // использование методов wait() и notify() для имитации часов
 	String state; // содержит сведения о состоянии часов
-
 	synchronized void tick(boolean running) {
 		if (!running) { // остановить часы
 			state = "ticked";
