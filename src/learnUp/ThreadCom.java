@@ -44,11 +44,11 @@ class TickTock { // использование методов wait() и notify() для имитации часов
 	}
 }
 
-class MyThr implements Runnable {
+class MyTh implements Runnable {
 	Thread thr;
 	TickTock ttOb;
 
-	MyThr(String name, TickTock tt) {
+	MyTh(String name, TickTock tt) {
 		thr = new Thread(this, name);
 		ttOb = tt;
 		thr.start();
@@ -70,9 +70,9 @@ class MyThr implements Runnable {
 class ThreadCom {
 	public static void main(String args[]) {
 		TickTock tt = new TickTock();
-		MyThr a = new MyThr("Tick", tt);
-		MyThr b = new MyThr("Tock", tt);
-		
+		MyTh a = new MyTh("Tick", tt);
+		MyTh b = new MyTh("Tock", tt);
+	
 		try {
 			a.thr.join();
 			b.thr.join();
