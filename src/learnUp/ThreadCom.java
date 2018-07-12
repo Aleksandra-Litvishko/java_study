@@ -2,6 +2,7 @@ package learnUp;
 
 class TickTock { // использование методов wait() и notify() для имитации часов
 	String state; // содержит сведения о состоянии часов
+
 	synchronized void tick(boolean running) {
 		if (!running) { // остановить часы
 			state = "ticked";
@@ -11,11 +12,17 @@ class TickTock { // использование методов wait() и notify() для имитации часов
 
 		System.out.print("Tick ");
 
+		try { //ожидать полсекунды
+			Thread.sleep(500);
+		} catch (InterruptedException exc) {
+			exc.printStackTrace();
+		}
+
 		state = "ticked"; // установить текущее состояние просле такта "тик"
-		
+
 		notify(); // метод tick() посылает уведомления методу tock()
 		try {
-			while (!state.equals("tocked")) 
+			while (!state.equals("tocked"))
 				wait(); // метод tick() ожидает завершения метода tock();
 		} catch (InterruptedException exc) {
 			System.out.println("Прерывание основного потока");
@@ -31,8 +38,14 @@ class TickTock { // использование методов wait() и notify() для имитации часов
 
 		System.out.print("Tock\n");
 
+		try {
+			Thread.sleep(500); // ожидать полсекунды
+		} catch (InterruptedException exc) {
+			exc.printStackTrace();
+		}
+
 		state = "tocked"; // установить текущее состояние просле такта "так"
-		
+
 		notify();// метод tock() посылает уведомления методу tick()
 		try {
 			while (!state.equals("ticked")) {
@@ -56,14 +69,16 @@ class MyTh implements Runnable {
 
 	public void run() {
 		if (thr.getName().compareTo("Tick") == 0) {
-			for (int i = 0; i < 5; i++) ttOb.tick(true);
+			for (int i = 0; i < 5; i++)
+				ttOb.tick(true);
 			ttOb.tick(false);
 		}
-		
+
 		else {
-			for (int i = 0; i < 5; i++) ttOb.tock(true);
+			for (int i = 0; i < 5; i++)
+				ttOb.tock(true);
 			ttOb.tock(false);
-		}	
+		}
 	}
 }
 
@@ -72,11 +87,11 @@ class ThreadCom {
 		TickTock tt = new TickTock();
 		MyTh a = new MyTh("Tick", tt);
 		MyTh b = new MyTh("Tock", tt);
-	
+
 		try {
 			a.thr.join();
 			b.thr.join();
-		} catch(InterruptedException exc) {
+		} catch (InterruptedException exc) {
 			System.out.println("Прерывание основного потока");
 		}
 	}
