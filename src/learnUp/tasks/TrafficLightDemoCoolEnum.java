@@ -1,29 +1,30 @@
 package learnUp.tasks;
 
-enum TrafficLightColor { // перечисление для обозначения цветов светофора
+enum TrafficLightColor1 { // перечисление для обозначения цветов светофора
 	RED, YELLOW, GREEN;
+	
+	boolean changed;
+	boolean stopped;
 }
 
-class TrafficLightSimulator implements Runnable { // класс, инкапсулирующий имитацию светофора
+class TrafficLightSimulator1 implements Runnable { // класс, инкапсулирующий имитацию светофора
 	private Thread thr; // поток для имитации светофора
-	private TrafficLightColor tlc; // текущий цвет светофора
-	boolean stop = false; // для остановки имитации установить в true
-	boolean changed = false; // true, если светофор переключился
+	private TrafficLightColor1 tlc; // текущий цвет светофора
 
-	TrafficLightSimulator(TrafficLightColor init) {
+	TrafficLightSimulator1(TrafficLightColor1 init) {
 		tlc = init;
 		thr = new Thread(this);
 		thr.start();
 	}
 
-	TrafficLightSimulator() {
-		tlc = TrafficLightColor.RED;
+	TrafficLightSimulator1() {
+		tlc = TrafficLightColor1.RED;
 		thr = new Thread(this);
 		thr.start();
 	}
 
 	public void run() {
-		while (!stop) {
+		while (!tlc.stopped) {
 			try {
 				switch (tlc) {
 				case GREEN:
@@ -46,42 +47,42 @@ class TrafficLightSimulator implements Runnable { // класс, инкапсулирующий имит
 	synchronized void changeColor() {
 		switch (tlc) {
 		case RED:
-			tlc = TrafficLightColor.YELLOW;
+			tlc = TrafficLightColor1.YELLOW;
 			break;
 		case YELLOW:
-			tlc = TrafficLightColor.GREEN;
+			tlc = TrafficLightColor1.GREEN;
 			break;
 		case GREEN:
-			tlc = TrafficLightColor.RED;
+			tlc = TrafficLightColor1.RED;
 			break;
 		}
-		changed = true;
+		tlc.changed = true;
 		notify();
 	}
 
 	synchronized void waitForChange() {
 		try {
-			while (!changed) {
+			while (!tlc.changed) {
 				wait();
 				}
-				changed = false;
+				tlc.changed = false;
 		} catch (InterruptedException exc) {
 			exc.printStackTrace();
 		}
 	}
 
-	TrafficLightColor getColor() {
+	TrafficLightColor1 getColor() {
 		return tlc;
 	}
 
 	void cancel() {
-		stop = true;
+		tlc.stopped = true;
 	}
 }
 
-class TrafficLightDemo {
+class TrafficLightDemoCoolEnum {
 	public static void main(String args[]) {
-		TrafficLightSimulator t1 = new TrafficLightSimulator(TrafficLightColor.GREEN);
+		TrafficLightSimulator1 t1 = new TrafficLightSimulator1(TrafficLightColor1.GREEN);
 		for (int i = 0; i < 9; i++) {
 			System.out.println(t1.getColor());
 			t1.waitForChange();
