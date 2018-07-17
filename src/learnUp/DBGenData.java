@@ -46,7 +46,7 @@ public class DBGenData {
 	public static void getID(int n) {
 		idList.add(n);
 	}
-	public static int returnIDList() {
+	public static int genID() {
 		int randomNumber = minIndex + (int) (Math.random() * idList.size());
 		int n = idList.get(randomNumber);
 		return n;
