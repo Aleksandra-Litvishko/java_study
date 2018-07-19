@@ -1,9 +1,9 @@
 package li.jdbc.start;
 
 import java.sql.*;
-import static li.jdbc.start.DBGenData.*;
+import static li.jdbc.start.DataGeneration.*;
 
-public class DBInsert implements DBInterface {
+public class DBInsert implements ConnectionInformation {
 	public static void main(String args[]) {
 		try (Connection conn = DriverManager.getConnection(URL + DB_NAME + CONNECT_STRING, USER_NAME, PASSWORD);
 				PreparedStatement ps = conn
@@ -34,7 +34,7 @@ public class DBInsert implements DBInterface {
 				System.out.println(n[1]);
 				ps.setInt(1, n[0]);
 				ps.setInt(2, n[1]);
-				ps.setDate(3, java.sql.Date.valueOf(DBGenData.genBirthDate()));
+				ps.setDate(3, java.sql.Date.valueOf(genBirthDate()));
 				ps.executeUpdate();
 			}
 			

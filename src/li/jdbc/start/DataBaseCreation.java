@@ -2,10 +2,8 @@ package li.jdbc.start;
 
 import java.sql.*;
 
-public class DBConnect implements DBInterface {
-	
-	public static void main(String[] args) {
-
+public class DataBaseCreation implements ConnectionInformation {
+	public void createDataBase() {
 		try (Connection conn = DriverManager.getConnection(URL + CONNECT_STRING, USER_NAME, PASSWORD);
 				Statement st = conn.createStatement()) {
 			System.out.println("+");

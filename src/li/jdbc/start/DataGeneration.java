@@ -1,10 +1,8 @@
 package li.jdbc.start;
 
-import static li.jdbc.start.DBGenData.genID;
-
 import java.util.ArrayList;
 
-public class DBGenData {
+public class DataGeneration {
 	private static int minIndex = 0;
 	private static int maxIndex = 39;
 	private static int intId1;
