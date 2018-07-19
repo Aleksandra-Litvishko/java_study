@@ -2,16 +2,16 @@ package li.jdbc.start;
 
 import java.sql.*;
 
-public class DataBaseCreation implements ConnectionInformation {
+public class DataBaseCreation  {
 	public void createDataBase() {
-		try (Connection conn = DriverManager.getConnection(URL + CONNECT_STRING, USER_NAME, PASSWORD);
+		try (Connection conn = DriverManager.getConnection(ConnectionString.URL.name() + ConnectionString.DB_NAME.name() + ConnectionString.CONNECT_STRING.name() + ConnectionString.USER_NAME.name() + ConnectionString.PASSWORD.name());
 				Statement st = conn.createStatement()) {
 			System.out.println("+");
 			st.executeUpdate("CREATE DATABASE SocialNet");
 		} catch (SQLException exc) {
 			exc.printStackTrace();
 		}
-		try (Connection conn = DriverManager.getConnection(URL + DB_NAME + CONNECT_STRING, USER_NAME, PASSWORD);
+		try (Connection conn = DriverManager.getConnection(ConnectionString.URL.name() + ConnectionString.DB_NAME.name() + ConnectionString.CONNECT_STRING.name() + ConnectionString.USER_NAME.name() + ConnectionString.PASSWORD.name());
 				Statement st1 = conn.createStatement();
 				Statement st2 = conn.createStatement();
 				Statement st3 = conn.createStatement();

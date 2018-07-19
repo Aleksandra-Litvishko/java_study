@@ -34,20 +34,33 @@ public class DataGeneration {
 		return random_number;
 	}
 
-	public static String genName() {
+	private static String generateName() {
 		return name[genIndex()];
 	}
 
-	public static String genSurname() {
+	private static String generateSurname() {
 		return surname[genIndex()];
 	}
 
-	public static String genBirthDate() {
+	private static String generateBirthDate() {
 		return birth_date[genIndex()];
+	}
+	
+	public static ArrayList<User> generateUsers(int count) {
+		ArrayList<User> users = new ArrayList<>();
+		for(int i = 0; i < count; i++) {
+			User user = new User(generateName(), generateSurname(), generateBirthDate());
+			users.add(user);
+		}
+		return users;
 	}
 
 	public static void getID(int n) {
 		idList.add(n);
+	}
+	
+	public static void setIdList(ArrayList<Integer> newIdList) {
+		idList = newIdList;
 	}
 
 	public static int genID() {
