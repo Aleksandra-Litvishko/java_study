@@ -1,12 +1,17 @@
 package learnUp;
 
+import static learnUp.DBGenData.genID;
+
 import java.util.ArrayList;
 
 public class DBGenData {
 	private static int minIndex = 0;
 	private static int maxIndex = 39;
+	private static int intId1;
+	private static int intId2;
 	private static ArrayList<Integer> idList = new ArrayList<>();
-	private static int idArray[] = {}; 
+	public static ArrayList<String> pairsId = new ArrayList<>();
+	private static int idArray[] = {};
 
 	private static String[] name = { "Cathleen", "Janie", "Terra", "Mccullough", "Powers", "Edwards", "Woodard",
 			"Harding", "Burgess", "Shana", "Flynn", "Lilia", "Lynnette", "Yates", "Claudia", "Craft", "Valeria", "Lynn",
@@ -46,9 +51,44 @@ public class DBGenData {
 	public static void getID(int n) {
 		idList.add(n);
 	}
+
 	public static int genID() {
 		int randomNumber = minIndex + (int) (Math.random() * idList.size());
 		int n = idList.get(randomNumber);
+	
+		return n;
+	}
+
+	public static int[] getPairId() {
+		int n[] = new int[2];
+
+		do {
+			intId1 = genID();
+			intId2 = genID();
+		} while (intId1 == intId2);
+
+		String id1 = Integer.toString(intId1);
+		String id2 = Integer.toString(intId2);
+		String st = id1 + "_" + id2;
+		String st1 = id2 + "_" + id1;
+
+		Boolean isExist = false;
+		
+		for (int i = 0; i < pairsId.size(); i++) {
+			if ((pairsId.get(i).equals(st) || pairsId.get(i).equals(st1))) {
+				isExist = true;
+			}
+		}
+
+		if (!isExist) {
+			pairsId.add(st);
+			pairsId.add(st1);
+			n[0] = intId1;
+			n[1] = intId2;
+		} else {
+			return getPairId();
+		}
+		
 		return n;
 	}
 }
