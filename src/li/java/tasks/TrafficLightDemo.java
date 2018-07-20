@@ -1,7 +1,17 @@
 package li.java.tasks;
 
 enum TrafficLightColor { // перечисление для обозначения цветов светофора
-	RED, YELLOW, GREEN;
+	RED(10000), YELLOW(2000), GREEN(12000);
+
+	private int delay;
+
+	TrafficLightColor(int delay) {
+		this.delay = delay;
+	}
+
+	public int getDelay() {
+		return delay;
+	}
 }
 
 class TrafficLightSimulator implements Runnable { // класс, инкапсулирующий имитацию светофора
@@ -25,17 +35,7 @@ class TrafficLightSimulator implements Runnable { // класс, инкапсулирующий имит
 	public void run() {
 		while (!stop) {
 			try {
-				switch (tlc) {
-				case GREEN:
-					Thread.sleep(10000); // зелёный 10 сек
-					break;
-				case YELLOW:
-					Thread.sleep(2000); // жёлтый 2 cек
-					break;
-				case RED:
-					Thread.sleep(12000); // красный 12 сек
-					break;
-				}
+				Thread.sleep(tlc.getDelay());
 			} catch (InterruptedException exc) {
 				exc.printStackTrace();
 			}
@@ -63,8 +63,8 @@ class TrafficLightSimulator implements Runnable { // класс, инкапсулирующий имит
 		try {
 			while (!changed) {
 				wait();
-				}
-				changed = false;
+			}
+			changed = false;
 		} catch (InterruptedException exc) {
 			exc.printStackTrace();
 		}
