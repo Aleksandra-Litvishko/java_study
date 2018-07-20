@@ -70,7 +70,7 @@ public class DataGeneration {
 		return n;
 	}
 
-	public static int[] getPairId() {
+	public static int[] generateUniqueIdPairs() {
 		int n[] = new int[2];
 
 		do {
@@ -97,9 +97,18 @@ public class DataGeneration {
 			n[0] = intId1;
 			n[1] = intId2;
 		} else {
-			return getPairId();
+			return generateUniqueIdPairs();
 		}
 		
 		return n;
+	}
+	
+	public static ArrayList<Friendship> generateFriendships(int count) {
+		ArrayList<Friendship> friendships = new ArrayList<>();
+		for(int i = 0; i < count; i++) {
+			Friendship friendship = new Friendship(generateUniqueIdPairs(), generateBirthDate());
+			friendships.add(friendship);
+		}
+		return friendships;
 	}
 }
