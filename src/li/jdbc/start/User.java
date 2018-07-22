@@ -1,11 +1,13 @@
 package li.jdbc.start;
 
+import java.time.LocalDate;
+
 public class User {
 	private String name;
 	private String surname;
-	private String birthDate;
+	private LocalDate birthDate;
 	
-	User (String name, String surname, String birthDate) {
+	User (String name, String surname, LocalDate birthDate) {
 		this.setName(name);
 		this.setSurname(surname);
 		this.setBirthDate(birthDate);
@@ -27,11 +29,11 @@ public class User {
 		this.surname = surname;
 	}
 
-	public String getBirthDate() {
+	public LocalDate getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(String birthDate) {
+	public void setBirthDate(LocalDate birthDate) {
 		this.birthDate = birthDate;
 	}
 }

@@ -2,16 +2,15 @@ package li.jdbc.start;
 
 import java.sql.*;
 
-public class DataBaseCreation  {
+public class DataBaseCreation {
 	public void createDataBase() {
-		try (Connection conn = DriverManager.getConnection(ConnectionString.URL.name() + ConnectionString.DB_NAME.name() + ConnectionString.CONNECT_STRING.name() + ConnectionString.USER_NAME.name() + ConnectionString.PASSWORD.name());
+		try (Connection conn = DriverManager.getConnection(ConnectionString.URL.name + ConnectionString.CONNECT_STRING.name, ConnectionString.USER_NAME.name, ConnectionString.PASSWORD.name);
 				Statement st = conn.createStatement()) {
-			System.out.println("+");
 			st.executeUpdate("CREATE DATABASE SocialNet");
 		} catch (SQLException exc) {
 			exc.printStackTrace();
 		}
-		try (Connection conn = DriverManager.getConnection(ConnectionString.URL.name() + ConnectionString.DB_NAME.name() + ConnectionString.CONNECT_STRING.name() + ConnectionString.USER_NAME.name() + ConnectionString.PASSWORD.name());
+		try (Connection conn = DriverManager.getConnection(ConnectionString.URL.name + ConnectionString.DB_NAME.name + ConnectionString.CONNECT_STRING.name, ConnectionString.USER_NAME.name, ConnectionString.PASSWORD.name);
 				Statement st1 = conn.createStatement();
 				Statement st2 = conn.createStatement();
 				Statement st3 = conn.createStatement();
@@ -24,7 +23,7 @@ public class DataBaseCreation  {
 					"CREATE TABLE Posts (id INTEGER AUTO_INCREMENT NOT NULL, userid INTEGER NOT NULL, text VARCHAR(1000) NOT NULL, timestamp DATETIME NOT NULL, PRIMARY KEY(id), FOREIGN KEY(userid) REFERENCES Users(id))");
 			st4.executeUpdate(
 					"CREATE TABLE Likes (postid INTEGER NOT NULL, userid INTEGER NOT NULL, timestamp DATETIME NOT NULL, FOREIGN KEY(postid) REFERENCES Posts(id), FOREIGN KEY(userid) REFERENCES Users(id))");
-			System.out.println("+");
+			System.out.println("DB was created...");
 		} catch (SQLException exc) {
 			exc.printStackTrace();
 		}

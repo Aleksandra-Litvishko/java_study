@@ -1,21 +1,23 @@
 package li.jdbc.start;
 
+import java.time.LocalDate;
+
 class Friendship {
 	private int id1;
 	private int id2;
-	private String timestamp;
+	private LocalDate timestamp;
 	
-	public Friendship(int pairsId [], String timestamp) {
+	public Friendship(int pairsId [], LocalDate timestamp) {
 		setId1(pairsId[0]);
 		setId2(pairsId[1]);
 		this.timestamp = timestamp;
 	}
 
-	public String getTimestamp() {
+	public LocalDate getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(String timestamp) {
+	public void setTimestamp(LocalDate timestamp) {
 		this.timestamp = timestamp;
 	}
 

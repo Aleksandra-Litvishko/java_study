@@ -8,7 +8,7 @@ public enum ConnectionString {
 	 USER_NAME("root"), 
 	 PASSWORD("qwerty123");
 	
-	 private final String name;
+	 public final String name;
 
 	 ConnectionString(String s) {
          name = s;
