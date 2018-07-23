@@ -3,19 +3,15 @@ package li.jdbc.start;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class UsersRepository {
-	private String connectionString;
-	private String user_name;
-	private String password;
-
-	public UsersRepository(String connectionString, String user_name, String password) {
-		this.connectionString = connectionString;
-		this.user_name = user_name;
-		this.password = password;
+public class UsersRepository extends Repository<User> {
+	
+	public UsersRepository(String connectionString, String username, String password) {
+		super(connectionString, username, password);
 	}
-
+	
+	@Override()
 	public void insertData(ArrayList<User> users) {
-		try (Connection conn = DriverManager.getConnection(connectionString, user_name, password);
+		try (Connection conn = DriverManager.getConnection(connectionString, username, password);
 				PreparedStatement ps = conn
 						.prepareStatement("INSERT INTO users \r\n" + "(name, surname, birthday) VALUES" + "(?,?,?)")) {
 			for (User user : users) {
@@ -32,7 +28,7 @@ public class UsersRepository {
 
 	public ArrayList<Integer> getAllIds() {
 		ArrayList<Integer> idList = new ArrayList<>();
-		try (Connection conn = DriverManager.getConnection(connectionString, user_name, password);
+		try (Connection conn = DriverManager.getConnection(connectionString, username, password);
 				Statement statement = conn.createStatement()) {
 
 			ResultSet rs = statement.executeQuery("SELECT id FROM users");
@@ -48,4 +44,5 @@ public class UsersRepository {
 		}
 		return idList;
 	}
+
 }

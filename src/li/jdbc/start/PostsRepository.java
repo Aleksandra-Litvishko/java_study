@@ -3,19 +3,14 @@ package li.jdbc.start;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class PostsRepository {
-	private String connectionString;
-	private String user_name;
-	private String password;
+public class PostsRepository extends Repository<Post> {
 	
-	public PostsRepository(String connectionString, String user_name, String password) {
-		this.connectionString = connectionString;
-		this.user_name = user_name;
-		this.password = password;
+	public PostsRepository(String connectionString, String username, String password) {
+		super(connectionString, username, password);
 	}
 	
 	public void insertData(ArrayList<Post> posts) {
-		try (Connection conn = DriverManager.getConnection(connectionString, user_name, password);
+		try (Connection conn = DriverManager.getConnection(connectionString, username, password);
 				PreparedStatement ps = conn
 						.prepareStatement("INSERT INTO posts \r\n" + "(userid, text, timestamp) VALUES" + "(?,?,?)")) {
 			for (Post post : posts) {
@@ -32,7 +27,7 @@ public class PostsRepository {
 
 	public ArrayList<Integer> getAllPostsIds() {
 		ArrayList<Integer> PostIdList = new ArrayList<>();
-		try (Connection conn = DriverManager.getConnection(connectionString, user_name, password);
+		try (Connection conn = DriverManager.getConnection(connectionString, username, password);
 				Statement statement = conn.createStatement()) {
 
 			ResultSet rs = statement.executeQuery("SELECT id FROM posts");

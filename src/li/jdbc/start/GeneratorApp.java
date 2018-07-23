@@ -6,7 +6,9 @@ public class GeneratorApp {
 	public static void main(String[] args) {
 		String dBconnectionString = ConnectionString.URL.name + ConnectionString.DB_NAME.name + ConnectionString.CONNECT_STRING.name;
 		
-		DataGeneration dataGeneration = new DataGeneration("","","");
+		DataGeneration dataGeneration = new DataGeneration("./filesWithData/names.txt",
+				"./filesWithData/surnames.txt",
+				"./filesWithData/posts.txt");
 		
 		DataBaseCreation database = new DataBaseCreation();
 		database.createDataBase();

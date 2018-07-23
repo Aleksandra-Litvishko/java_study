@@ -11,15 +11,10 @@ public class DataGeneration {
 	private ArrayList<Integer> postIdList = new ArrayList<>();
 	private ArrayList<String> usersPairsIdList = new ArrayList<>();
 	private ArrayList<String> usersPostsIdList = new ArrayList<>();
-	private String namesFileAddress;
-	private String surnamesFileAddress;
-	private String postsFileAddress;
-	DataSource data = new DataSource(namesFileAddress, surnamesFileAddress, postsFileAddress);
+	DataSource data;
 	
 	DataGeneration(String namesFileAddress, String surnamesFileAddress, String postsFileAddress) {
-		this.namesFileAddress = namesFileAddress;
-		this.surnamesFileAddress = surnamesFileAddress;
-		this.postsFileAddress = postsFileAddress;
+		this.data = new DataSource(namesFileAddress, surnamesFileAddress, postsFileAddress);
 	}
 	
 	private int genIndex(ArrayList<?> arr) {
@@ -50,6 +45,16 @@ public class DataGeneration {
 		LocalDate randomBirthDate = LocalDate.ofEpochDay(randomDay);
 		return randomBirthDate;
 	}
+	
+	private LocalDate generateTimestamp() {
+		Random random = new Random();
+		int minDay = (int) LocalDate.of(2015, 1, 1).toEpochDay();
+		int maxDay = (int) LocalDate.of(2015, 12, 31).toEpochDay();
+		long randomDay = minDay + random.nextInt(maxDay - minDay);
+
+		LocalDate randomBirthDate = LocalDate.ofEpochDay(randomDay);
+		return randomBirthDate;
+	}
 
 	private String generatePost() {
 		return data.getPosts().get(genIndex(data.getPosts()));
@@ -75,7 +80,7 @@ public class DataGeneration {
 	public ArrayList<Friendship> generateFriendships(int count) {
 		ArrayList<Friendship> friendships = new ArrayList<>();
 		for (int i = 0; i < count; i++) {
-			Friendship friendship = new Friendship(generateUniqueIdPairs(userIdList), generateBirthDate());
+			Friendship friendship = new Friendship(generateUniqueIdPairs(userIdList), generateTimestamp());
 			friendships.add(friendship);
 		}
 		return friendships;
@@ -84,7 +89,7 @@ public class DataGeneration {
 	public ArrayList<Post> generatePosts(int count) {
 		ArrayList<Post> posts = new ArrayList<>();
 		for (int i = 0; i < count; i++) {
-			Post post = new Post(generateId(userIdList), generatePost(), generateBirthDate());
+			Post post = new Post(generateId(userIdList), generatePost(), generateTimestamp());
 			posts.add(post);
 		}
 		return posts;
@@ -93,7 +98,7 @@ public class DataGeneration {
 	public ArrayList<Like> generateLikes(int count) {
 		ArrayList<Like> likes = new ArrayList<>();
 		for (int i = 0; i < count; i++) {
-			Like like = new Like(generateId(userIdList), generateId(postIdList), generateBirthDate());
+			Like like = new Like(generateId(userIdList), generateId(postIdList), generateTimestamp());
 			likes.add(like);
 		}
 		return likes;
