@@ -1,4 +1,4 @@
-package li.java.tasks;
+package li.java.tasks.lambda;
 
 interface NumericTest {
 	boolean test(int n, int m);

@@ -1,4 +1,4 @@
-package li.java.tasks;
+package li.java.tasks.lambda;
 
 enum TrafficLightColor { // перечисление для обозначения цветов светофора
 	RED(10000), YELLOW(2000), GREEN(12000);

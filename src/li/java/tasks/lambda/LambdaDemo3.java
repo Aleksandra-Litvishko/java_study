@@ -1,4 +1,4 @@
-package li.java.tasks;
+package li.java.tasks.lambda;
 
 interface StringTest {
 	boolean test(String a, String b);

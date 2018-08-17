@@ -1,4 +1,4 @@
-package li.java.tasks;
+package li.java.tasks.lambda;
 
 interface StringFunc {
 	String func(String str);
