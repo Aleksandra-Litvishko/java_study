@@ -1,8 +1,13 @@
 package li.jdbc.start;
 
+import li.jdbc.start.entities.*;
+import li.jdbc.start.repositories.*;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
+
+import li.jdbc.start.entities.User;
 
 public class DataGeneration {
 	private int intId1;

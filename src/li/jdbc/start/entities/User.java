@@ -1,4 +1,4 @@
-package li.jdbc.start;
+package li.jdbc.start.entities;
 
 import java.time.LocalDate;
 
@@ -7,7 +7,7 @@ public class User {
 	private String surname;
 	private LocalDate birthDate;
 	
-	User (String name, String surname, LocalDate birthDate) {
+	public User (String name, String surname, LocalDate birthDate) {
 		this.setName(name);
 		this.setSurname(surname);
 		this.setBirthDate(birthDate);

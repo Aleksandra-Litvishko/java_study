@@ -1,8 +1,8 @@
-package li.jdbc.start;
+package li.jdbc.start.entities;
 
 import java.time.LocalDate;
 
-class Friendship {
+public class Friendship {
 	private int id1;
 	private int id2;
 	private LocalDate timestamp;

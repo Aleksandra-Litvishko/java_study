@@ -1,7 +1,9 @@
-package li.jdbc.start;
+package li.jdbc.start.repositories;
 
 import java.sql.*;
 import java.util.ArrayList;
+
+import li.jdbc.start.entities.User;
 
 public class UsersRepository extends Repository<User> {
 	

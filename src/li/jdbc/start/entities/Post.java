@@ -1,15 +1,15 @@
-package li.jdbc.start;
+package li.jdbc.start.entities;
 
 import java.time.LocalDate;
 
-class Like {
+public class Post { 
 	private int userId;
-	private int postId;
+	private String text;
 	private LocalDate timestamp;
 	
-	public Like(int userId, int postId, LocalDate timestamp) {
+	public Post (int userId, String text, LocalDate timestamp) {
 		this.setUserId(userId);
-		this.setPostId(postId);
+		this.setText(text);
 		this.setTimestamp(timestamp);
 	}
 
@@ -17,16 +17,16 @@ class Like {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUserId(int postId) {
+		this.userId = postId;
 	}
 
-	public int getPostId() {
-		return postId;
+	public String getText() {
+		return text;
 	}
 
-	public void setPostId(int postId) {
-		this.postId = postId;
+	public void setText(String text) {
+		this.text = text;
 	}
 
 	public LocalDate getTimestamp() {
@@ -36,4 +36,5 @@ class Like {
 	public void setTimestamp(LocalDate timestamp) {
 		this.timestamp = timestamp;
 	}
+
 }

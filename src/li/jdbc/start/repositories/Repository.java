@@ -1,4 +1,4 @@
-package li.jdbc.start;
+package li.jdbc.start.repositories;
 
 import java.util.ArrayList;
 

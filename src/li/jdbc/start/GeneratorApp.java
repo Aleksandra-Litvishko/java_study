@@ -2,6 +2,9 @@ package li.jdbc.start;
 
 import java.util.ArrayList;
 
+import li.jdbc.start.entities.*;
+import li.jdbc.start.repositories.*;
+
 public class GeneratorApp {
 	public static void main(String[] args) {
 		String dBconnectionString = ConnectionString.URL.name + ConnectionString.DB_NAME.name + ConnectionString.CONNECT_STRING.name;

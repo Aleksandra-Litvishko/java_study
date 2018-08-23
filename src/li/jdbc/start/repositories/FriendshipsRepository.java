@@ -1,7 +1,9 @@
-package li.jdbc.start;
+package li.jdbc.start.repositories;
 
 import java.sql.*;
 import java.util.ArrayList;
+
+import li.jdbc.start.entities.Friendship;
 
 public class FriendshipsRepository extends Repository<Friendship> {
 
