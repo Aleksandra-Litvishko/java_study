@@ -7,9 +7,10 @@ public class WordsFromConsole {
 		String line;
 		Scanner scan = new Scanner(System.in);
 		
-		line = scan.next();
+		line = scan.nextLine();
 		List<String> words = Arrays.asList(line.split(" "));
 		
-		
+		MultifuncStringArray wordsList = new MultifuncStringArray(words);
+		wordsList.FindWordWithMaxDiffSymbols();
 	}
 }
