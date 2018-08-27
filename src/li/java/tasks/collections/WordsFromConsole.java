@@ -9,5 +9,7 @@ public class WordsFromConsole {
 		
 		line = scan.next();
 		List<String> words = Arrays.asList(line.split(" "));
+		
+		
 	}
 }
