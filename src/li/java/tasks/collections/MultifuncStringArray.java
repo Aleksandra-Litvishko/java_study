@@ -12,16 +12,19 @@ public class MultifuncStringArray {
 	//найти слово с максимальным количеством повтор€ющихс€ символов
 	public void FindWordWithMaxDiffSymbols() {
 		int[] countOfRepetition = new int[words.size()];
+		int counter;
 
-		if (words.size() > 1) {
-			int counter;
-			for (int i = 0; i < words.size(); i++) {
+		if (words.size() >= 1) {
+			for(int i = 0; i < words.size(); i++) {
 				counter = 0;
-				for (int j = 0; j < words.get(i).length(); j++) {
-					if (words.get(i).lastIndexOf(j) > counter)
-						counter = words.get(i).lastIndexOf(j);
-					if (j == words.get(i).length() - 1)
-						countOfRepetition[i] = counter;
+				for(int j = 0; j < words.get(i).length(); j++) {
+					int len = words.get(i).length();
+					String s = words.get(i).charAt(j) + "";
+			        int newlen = words.get(i).replaceAll(s, "").length();
+			        if((len - newlen) > counter) counter = (len - newlen);
+			        if(j < words.get(i).length()-1) {
+			        	countOfRepetition[i] = counter;
+			        }
 				}
 			}
 			int min;
