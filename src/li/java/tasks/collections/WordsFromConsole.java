@@ -12,5 +12,6 @@ public class WordsFromConsole {
 		
 		MultifuncStringArray ms = new MultifuncStringArray(words);
 		ms.FindWordWithMaxDiffSymbols();
+		ms.FindWordWithMinDiffSymbols();
 	}
 }
