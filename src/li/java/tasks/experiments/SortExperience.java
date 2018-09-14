@@ -1,4 +1,4 @@
-package li.java.tasks.collections;
+package li.java.tasks.experiments;
 
 public class SortExperience {
 	public static void main(String args[]) {
@@ -44,12 +44,14 @@ public class SortExperience {
 //			System.out.print(x + " ");
 //		}
 		
-		String str ="string";
-		String reversedStr = "";
-		for(int i = str.length() - 1; i >= 0 ; i--) {
-			reversedStr = reversedStr + str.charAt(i);
-		} 
-		System.out.println(reversedStr);
+//		String str ="string";
+//		String reversedStr = "";
+//		for(int i = str.length() - 1; i >= 0 ; i--) {
+//			reversedStr = reversedStr + str.charAt(i);
+//		} 
+//		System.out.println(reversedStr);
+		
+		
 		
 		
 	}
