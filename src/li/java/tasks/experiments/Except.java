@@ -1,4 +1,4 @@
-package li.java.tasks.collections;
+package li.java.tasks.experiments;
 
 import java.io.FileInputStream;
 import java.io.IOException;

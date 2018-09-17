@@ -23,4 +23,17 @@ public class SimpleAlgo {
 			System.out.print(fibSum + " ");
 		}	
 	}
+		
+		public static void getMyFibonacchi() {
+			int a = 1;
+			int b = 1;
+			int fibSum;
+			
+			for(int i = 0; i < 500; i++) {
+				fibSum = a + b;
+				a = b;
+				b = fibSum;
+				System.out.print(fibSum + " ");
+			}	
+	}
 }
