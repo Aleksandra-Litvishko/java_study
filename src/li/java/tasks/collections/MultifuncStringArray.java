@@ -11,23 +11,32 @@ public class MultifuncStringArray {
 
 	// найти слово с максимальным количеством повторяющихся символов
 	public void FindWordWithMaxDiffSymbols() {
-		int[] countOfRepetition = new int[words.size()];
-		int counter;
+		int countOfWords = words.size();
+		int[] countOfRepetition = new int[countOfWords];
+		
+		if (countOfWords >= 1) {
+			// После
+			for (int i = 0; i < countOfWords; i++) {
 
-		if (words.size() >= 1) {
-			for (int i = 0; i < words.size(); i++) {
-				counter = 1;
-				for (int j = 0; j < words.get(i).length(); j++) {
-					int len = words.get(i).length();
-					String s = words.get(i).charAt(j) + "";
-					int newlen = words.get(i).replaceAll(s, "").length();
-					if ((len - newlen) > counter)
+				String word = words.get(i);
+				int counter = 1;
+				int len = word.length();
+				
+				for (int j = 0; j < len; j++) {
+					
+					String s = Character.toString(word.charAt(j));
+					int newlen = word.replaceAll(s, "").length();
+					
+					if ((len - newlen) > counter) {
 						counter = (len - newlen);
-					if (j < words.get(i).length() - 1) {
+					}
+					
+					if (j < len - 1) {
 						countOfRepetition[i] = counter;
 					}
 				}
 			}
+
 			int max;
 			max = countOfRepetition[0];
 			int maxIndex = 0;
@@ -82,7 +91,10 @@ public class MultifuncStringArray {
 					minIndex = i;
 				}
 			}
-			System.out.println("Первое слово без повторения символов: " + words.get(minIndex));
+			if (min > 1)
+				System.out.println("Слова без повторения символов отсутствуют");
+			else
+				System.out.println("Первое слово без повторения символов: " + words.get(minIndex));
 		} else {
 			System.out.println(
 					"Строка не содержит слов. Найти слово, в котором число различных символов минимально, невозможно");
@@ -94,9 +106,8 @@ public class MultifuncStringArray {
 	public void FindSecondWordOnlyFromDigits() {
 		if (words.size() >= 1) {
 			for (int i = 0; i < words.size(); i++) {
-				char [] digits =  
 				for (int j = 0; j < words.get(i).length(); j++) {
-					
+
 				}
 			}
 		} else {
