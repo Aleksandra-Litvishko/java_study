@@ -51,8 +51,8 @@ public class SortExperience {
 //		} 
 //		System.out.println(reversedStr);
 		
-		
-		
-		
+		StringBuilder str = new StringBuilder ("перепелка в лесу");
+		String string = str.reverse().toString();
+		System.out.println(string);
 	}
 }
