@@ -1,4 +1,4 @@
-package li.java.tasks.experiments;
+package li.java.tasks.multithreading;
 
 import java.util.concurrent.Semaphore;
 
@@ -35,6 +35,7 @@ class Cat extends Thread {
 public class PrivateCats {
 	public static void main(String args[]) {
 		Semaphore sem = new Semaphore(2);
+		
 		Cat cat1 = new Cat(sem, 1);
 		Cat cat2 = new Cat(sem, 2);
 		Cat cat3 = new Cat(sem, 3);

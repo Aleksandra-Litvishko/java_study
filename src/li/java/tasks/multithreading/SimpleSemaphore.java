@@ -1,4 +1,4 @@
-package li.java.tasks.experiments;
+package li.java.tasks.multithreading;
 
 import java.util.concurrent.Semaphore;
  

@@ -1,4 +1,4 @@
-package li.java.tasks.experiments;
+package li.java.tasks.multithreading;
 
 class FirstClass {
 
@@ -9,7 +9,7 @@ class FirstClass {
 		} catch (InterruptedException exc) {
 			exc.printStackTrace();
 		}
-		System.out.println("Попытка вызвать метод last() класса FirstClass");
+		System.out.println("Попытка вызвать метод last() класса SecondClass");
 		sc.lastMeth();
 	}
 
@@ -27,7 +27,7 @@ class SecondClass {
 		} catch (InterruptedException exc) {
 			exc.printStackTrace();
 		}
-		System.out.println("Попытка вызвать метод last() класса SecondClass");
+		System.out.println("Попытка вызвать метод last() класса FirstClass");
 		fc.lastMeth();
 	}
 
