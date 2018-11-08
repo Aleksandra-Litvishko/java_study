@@ -2,6 +2,7 @@ package li.java.patterns.Observer;
 
 import java.util.ArrayList;
 
+
 public class WeatherData implements Subject {
 	private ArrayList observers;
 	private float temperature;
@@ -16,6 +17,7 @@ public class WeatherData implements Subject {
 		this.temperature = temperature;
 		this.humidity = humidity;
 		this.pressure = pressure;
+		measurementsChanged();
 	}
 	
 	@Override
@@ -39,6 +41,5 @@ public class WeatherData implements Subject {
 	
 	public void measurementsChanged() {
 		notifyObservers();
-	}
-	
+	}	
 }
