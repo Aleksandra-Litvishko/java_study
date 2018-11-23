@@ -1,0 +1,11 @@
+package li.java.patterns.Command;
+
+public class NoCommand implements Command {
+	public void execute() {
+		
+	}
+	
+	public void undo() {
+		
+	}
+}

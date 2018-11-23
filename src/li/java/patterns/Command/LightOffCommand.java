@@ -1,17 +1,17 @@
 package li.java.patterns.Command;
 
-public class LightOnCommand implements Command {
+public class LightOffCommand implements Command {
 	Light light;
 	
-	LightOnCommand(Light light) {
+	LightOffCommand(Light light) {
 		this.light = light;
 	}
 	
 	public void execute() {
-		light.on();
+		light.off();
 	}
 	
 	public void undo() {
-		light.off();
+		light.on();
 	}
 }
