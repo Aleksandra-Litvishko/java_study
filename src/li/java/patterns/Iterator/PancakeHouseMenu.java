@@ -1,8 +1,9 @@
 package li.java.patterns.Iterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class PancakeHouseMenu {
+public class PancakeHouseMenu implements Menu {
 	ArrayList menuItems;
 	
 	public PancakeHouseMenu() {
@@ -19,7 +20,7 @@ public class PancakeHouseMenu {
 		menuItems.add(menuItem);
 	}
 	
-	public ArrayList getMenuItems() {
-		return menuItems;
+	public Iterator createIterator() {
+		return (Iterator) menuItems.iterator();
 	}
 }
