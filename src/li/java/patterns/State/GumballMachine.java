@@ -23,6 +23,13 @@ public class GumballMachine {
 			state = noQuarterState;
 		}
 	}
+	
+	public void refill(int newCountOfGumballs) {
+		count = newCountOfGumballs;
+		if(count > 0) {
+			state = noQuarterState;
+		}
+	}
 
 	public void insertQuarter() {
 		state.insertQuarter();
