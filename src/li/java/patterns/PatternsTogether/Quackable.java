@@ -1,5 +1,5 @@
 package li.java.patterns.PatternsTogether;
 
-public interface Quackable {
+public interface Quackable extends QuackObservable {
 	public void quack();
 }

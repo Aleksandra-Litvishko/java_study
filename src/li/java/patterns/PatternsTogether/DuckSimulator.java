@@ -3,23 +3,49 @@ package li.java.patterns.PatternsTogether;
 public class DuckSimulator {
 	public static void main(String args[]) {
 		DuckSimulator simulator = new DuckSimulator();
-		simulator.simulate();
+		AbstractDuckFactory duckFactory = new CountingDuckFactory();
+		AbstractGooseFactory gooseFactory = new GooseAsDuckFactory();
+		
+		simulator.simulate(duckFactory, gooseFactory);
 	}
 	
-	public void simulate() {
-		Quackable mallardDuck = new QuackCounter(new MallardDuck());
-		Quackable redheadDuck = new QuackCounter(new RedheadDuck());
-		Quackable duckCall = new QuackCounter(new DuckCall());
-		Quackable rubberDuck = new QuackCounter(new RubberDuck());
-		Quackable gooseDuck = new GooseAdapter(new Goose());
+	public void simulate(AbstractDuckFactory duckFactory, AbstractGooseFactory gooseFactory) {
+		Quackable mallardDuck = duckFactory.createMallardDuck();
+		Quackable redheadDuck = duckFactory.createRedheadDuck();
+		Quackable duckCall = duckFactory.createDuckCall();
+		Quackable rubberDuck = duckFactory.createRubberDuck();
+		Quackable gooseDuck = gooseFactory.createGoose();
+		
+		Flock duckFlock = new Flock();
+		
+		duckFlock.addDuck(mallardDuck);
+		duckFlock.addDuck(redheadDuck);
+		duckFlock.addDuck(duckCall);
+		duckFlock.addDuck(rubberDuck);
+		duckFlock.addDuck(gooseDuck);
+
+		Flock flockOfMallards = new Flock();
+		Quackable mallardOne = duckFactory.createMallardDuck();
+		Quackable mallardTwo = duckFactory.createMallardDuck();
+		Quackable mallardThree = duckFactory.createMallardDuck();
+		Quackable mallardFour = duckFactory.createMallardDuck();
+		
+		flockOfMallards.addDuck(mallardOne);
+		flockOfMallards.addDuck(mallardTwo);
+		flockOfMallards.addDuck(mallardThree);
+		flockOfMallards.addDuck(mallardFour);
+		
+		duckFlock.addDuck(flockOfMallards);
 		
 		System.out.println("<<Duck simulator in action>>");
+		Quackologist quackologist = new Quackologist();
+		flockOfMallards.registerObserver(quackologist);
 		
-		simulate(mallardDuck);
-		simulate(redheadDuck);
-		simulate(duckCall);
-		simulate(rubberDuck);
-		simulate(gooseDuck);
+		System.out.println("<<Duck simulator: whole Flock Simulation>>");
+		simulate(duckFlock);
+		
+		System.out.println("<<Duck simulator: Mallard Flock Simulation>>");
+		simulate(flockOfMallards);
 		
 		System.out.println("The ducks quacked " + QuackCounter.getQuacks() + " times");
 	}
