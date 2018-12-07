@@ -21,4 +21,8 @@ public class GooseAdapter implements Quackable {
 	public void notifyObservers() {
 		observable.notifyObservers();
 	}
+	
+	public String toString() {
+		return goose.toString();
+	}
 }

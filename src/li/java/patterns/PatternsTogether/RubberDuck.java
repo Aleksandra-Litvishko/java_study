@@ -19,4 +19,8 @@ public class RubberDuck implements Quackable {
 	public void notifyObservers() {
 		observable.notifyObservers();
 	}
+	
+	public String toString() {
+		return "RubberDuck";
+	}
 }

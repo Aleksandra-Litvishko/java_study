@@ -2,6 +2,6 @@ package li.java.patterns.PatternsTogether;
 
 public class Quackologist implements Observer {
 	public void update(QuackObservable duck) {
-		System.out.println("Quackologist " + duck + " just quacked");
+		System.out.println("Quackologist: " + duck + " just quacked");
 	}
 }
