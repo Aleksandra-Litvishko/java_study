@@ -3,11 +3,9 @@ package li.java.patterns.PatternsTogether;
 public class QuackCounter implements Quackable {
 	Quackable duck;
 	static int numberOfQuack = 0;
-	Observable observable;
 	
 	public QuackCounter(Quackable duck) {
 		this.duck = duck;
-		observable = new Observable(this);
 	}
 	
 	public void quack() {
@@ -24,6 +22,6 @@ public class QuackCounter implements Quackable {
 	}
 
 	public void notifyObservers() {
-		observable.notifyObservers();
+		duck.notifyObservers();
 	}
 }
